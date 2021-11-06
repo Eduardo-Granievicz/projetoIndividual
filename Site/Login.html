@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Colheita Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtJArb7in5fXN20rvRiEmhmWJofjN6DXE9du_rGNmcZ28bAw_nAqM9wWtQEPvJ2sQ5Tk&usqp=CAU" alt="">
+      <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
+      <ul class="nav-list">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Cadastro</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <div>
+        <h2 class="div1">Counter-Strike</h2>
+        <h2>Login</h2>
+        <input type="text" placeholder="Insira o nome">
+        <br><br>
+        <input type="password" id="senha" placeholder="Senha">
+        <br><br>
+        <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
+        <br><br>
+        <button>Acessar</button>
+        <br><br>
+        Não tem uma conta? <a href="Cadastro.html">Cadastre-se</a> <br><br>
+        <a href="">Esqueci minha senha</a>
+    </div>
+
+   
+    
+</body>
+</html>
+<script>
+    function mostrarSenha(){
+        var senha = document.getElementById("senha")
+        if (senha.type=="password"){
+            senha.type="text";
+        }else{
+            senha.type="password"
+        }
+    }
+</script>
