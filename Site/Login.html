@@ -1,45 +1,213 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="ptbr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Colheita Inteligente</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tela de login</title>
 </head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+      background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 9vh;
+  }
 
+  nav img{
+      width: 75px;
+      height: 75px;
+  }
+
+  main {
+    background: url("bg.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin-right: 300px;
+  }
+  
+  header  .cs{
+      padding-right: 90px;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+
+  .banner
+{
+    
+    height: 100vh;
+    background-size:cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+  .banner .message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5e5e5;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.9;
+
+}
+
+   .banner img{
+    height: 100vh;
+    width: 99.1vw;
+}
+
+    .banner .formLogin{
+        background: rgb(0, 0, 0, 0.9);
+    height: 40%;
+    width: 20%;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    color: white;
+}
+
+.banner .formLogin button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #575757 ;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    height: 50px;
+    width: 200px; 
+}
+
+.banner .formLogin button:hover{
+    opacity: 0.8;
+}
+
+.banner .formLogin .input{
+    width: 170px;
+    height: 200px;
+    border-radius: 7px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+   
+}
+
+
+
+.footer
+{
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer p
+{
+    color: #ffff;
+    font-weight: 500;
+}
+
+</style>
 <body>
+    
+<header>
     <nav>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtJArb7in5fXN20rvRiEmhmWJofjN6DXE9du_rGNmcZ28bAw_nAqM9wWtQEPvJ2sQ5Tk&usqp=CAU" alt="">
-      <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
-      <ul class="nav-list">
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Cadastro</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-    <div>
-        <h2 class="div1">Counter-Strike</h2>
-        <h2>Login</h2>
-        <input type="text" placeholder="Insira o nome">
-        <br><br>
-        <input type="password" id="senha" placeholder="Senha">
-        <br><br>
-        <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
-        <br><br>
-        <button>Acessar</button>
-        <br><br>
-        Não tem uma conta? <a href="Cadastro.html">Cadastre-se</a> <br><br>
-        <a href="">Esqueci minha senha</a>
-    </div>
+            <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
+                <ul class="nav-list">
 
-   
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Cadastro</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Contato</a></li>
+                    
+                </ul>
+    </nav>
+</header>
+
+<div class="banner">
+    
+    <div class="formLogin">
+        
+        <h3>Counter-Strike</h3>
+        <br><br>
+        <h3 class="titulo">Faça seu login</h3> <br>
+        <h3>Email:</h3> <input class="input" id="email" type="text" placeholder="Insira seu email"> 
+        <br><br>
+        <h3>Senha:</h3>  <input class="input" id="senha" type="password" placeholder="Insira sua senha">
+        <br><br>
+        <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha <br>
+
+        <button>Entrar</button>
+    </div>
+</div>    
+
+
+
+<footer class="footer">
+    <p>
+        Eduardo Granievicz © 2021
+    </p>
+</footer>
+
     
 </body>
 </html>
+
 <script>
-    function mostrarSenha(){
+     function mostrarSenha(){
         var senha = document.getElementById("senha")
         if (senha.type=="password"){
             senha.type="text";
