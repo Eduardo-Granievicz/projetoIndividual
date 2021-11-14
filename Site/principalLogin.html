@@ -1,13 +1,13 @@
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tela inicial</title>
-    
-  </head>
-  <style>
-    * {
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<style>
+      * {
     margin: 0;
     padding: 0;
   }
@@ -97,6 +97,44 @@
     width: 99.1vw;
 }
 
+#vertical {
+    max-width: 8vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.9);
+}
+
+#vertical ul {
+    list-style-type: none;
+    padding: 0;
+    padding-right: 3px;
+}
+
+#vertical ul li{
+    border-bottom: 1px solid ;
+    padding-right: 3px;
+}
+
+#vertical ul li a {
+     
+    color: #FFF;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    transition: background .3s;
+    text-transform: uppercase;
+}
+
+#vertical ul li a:hover {
+    
+    color: white
+}
+
+
+
+
+
+
 .footer
 {
     background-color: rgb(0, 0, 0, 0.9);
@@ -112,32 +150,28 @@
     color: #ffff;
     font-weight: 500;
 }
+</style>
+<body>
+    <nav>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtJArb7in5fXN20rvRiEmhmWJofjN6DXE9du_rGNmcZ28bAw_nAqM9wWtQEPvJ2sQ5Tk&usqp=CAU" alt="">
+            <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
+                <ul class="nav-list">
 
-
-  </style>
-
-  <body>
-    <header>
-        <nav>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtJArb7in5fXN20rvRiEmhmWJofjN6DXE9du_rGNmcZ28bAw_nAqM9wWtQEPvJ2sQ5Tk&usqp=CAU" alt="">
-        <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
-        <ul class="nav-list">
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Cadastro</a></li>
-          <li><a href="#">Login</a></li>
-         
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Cadastro</a></li>
+                    <li><a href="#">Login</a></li>
+                    
+                    
+                </ul>
+    </nav>
+    <nav id="vertical">
+        <ul>
+            <li><a href="#">Cruzadinha</a></li>
+            <li><a href="#">Sorteio</a></li>
+            <li><a href="#">Gráficos</a></li>
+            <li><a href="#contato">Conheça os mapas</a></li>
         </ul>
-      </nav>
-    </header>
-
-    <div class="banner">
-
-           
-
-    </div>
-
-
-    
+    </nav>
 
     <footer class="footer">
         <p>
@@ -145,8 +179,5 @@
         </p>
     </footer>
     
-
-    
-    
-  </body>
+</body>
 </html>

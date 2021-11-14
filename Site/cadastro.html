@@ -96,11 +96,17 @@
     height: 100vh;
     width: 99.1vw;
 }
+    .banner .formCadastro .titulo{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
 
-    .banner .formLogin{
-        background: rgb(0, 0, 0, 0.9);
-    height: 40%;
-    width: 20%;
+    .banner .formCadastro{
+    background: rgb(0, 0, 0, 0.9);
+    height: 60vh;
+    width: 20vw;
     padding: 30px;
     border-radius: 20px;
     display: flex;
@@ -111,7 +117,7 @@
     color: white;
 }
 
-.banner .formLogin button{
+.banner .formCadastro .submit{
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -122,17 +128,18 @@
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
-    height: 50px;
-    width: 200px; 
+    height: 5vh;
+    width: 10vw; 
+    
 }
 
-.banner .formLogin button:hover{
+.banner .formCadastro .submit:hover{
     opacity: 0.8;
 }
 
-.banner .formLogin .input{
-    width: 170px;
-    height: 200px;
+.banner .formCadastro .input{
+    width: 11vw;
+    height: 2vh;
     border-radius: 7px;
     padding: 10px;
     border: none;
@@ -179,18 +186,25 @@
 
 <div class="banner">
     
-    <div class="formLogin">
-        
-        <h3>Counter-Strike</h3>
+    <div class="formCadastro">
+      <form action="">
+        <h3 class="titulo">Counter-Strike</h3>
         <br><br>
-        <h3 class="titulo">Faça seu login</h3> <br>
-        <h3>Email:</h3> <input class="input" id="email" type="text" placeholder="Insira seu email"> 
+        <h3 class="titulo">Faça seu Cadastro</h3> <br>
+        <h3>Nome:</h3> <input class="input" type="text" id="nome" placeholder="Insira seu nome" required>
         <br><br>
-        <h3>Senha:</h3>  <input class="input" id="senha" type="password" placeholder="Insira sua senha">
+        <h3>Sobrenome:</h3> <input class="input" type="text" id="sobrenome" placeholder="Insira seu sobronome" required>
+        <br><br>
+        <h3>Email:</h3> <input class="input" id="email" type="text" placeholder="Insira seu email" required> 
+        <br><br>
+        <h3>Senha:</h3>  <input class="input" id="senha" type="password" placeholder="Insira sua senha" required>
+        <br><br>
+        <h3>Confirme sua senha:</h3> <input class="input" type="password" id="confirma" placeholder="Confirme sua senha" required>
         <br><br>
         <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha <br>
 
-        <button>Entrar</button>
+        <input class="submit" type="submit">
+    </form>  
     </div>
 </div>    
 
@@ -209,10 +223,11 @@
 <script>
      function mostrarSenha(){
         var senha = document.getElementById("senha")
-        if (senha.type=="password"){
+        var confrima = document.getElementById("confirma")
+        if (senha.type=="password" && confirma.type=="password"){
             senha.type="text";
-        }else{
-            senha.type="password"
+        }else if(confirma.type =="password"){
+            confirma.type="text"
         }
     }
 </script>
