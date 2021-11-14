@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Menu - cruzadinha</title>
 </head>
 <style>
       * {
@@ -167,14 +167,15 @@ button{
     border-radius: 20px;
 }
 
-.container{
-    width: 1100px;
-    margin: auto;
-    margin-top: 10vh;
-}
-
-.container h1{
-    color: white;
+.banner{
+ 
+    height: 100vh;
+    background-size:cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .div_game{
@@ -273,9 +274,7 @@ footer p{
     background-color: rgb(255, 255, 255, 0.9);
 }
 
-center{
-    background-color: rgb(255, 255, 255, 0.9);
-}
+
 
 .button_verif{
     background-color: black;
@@ -323,7 +322,7 @@ center{
         </ul>
     </nav>
 
-    <div class="container">
+    <div class="banner">
         <h1 class="titulo">Palavras-Cruzadas</h1><br>
         <div class="div_button">
             <center>
@@ -335,7 +334,7 @@ center{
         <br>
     </div>
     
-        <div class="container">
+        
             <div style="display: none" id="div_verifiedAnswer">
                 <h3>Resposta Correta</h3>
             </div>
@@ -355,19 +354,20 @@ center{
                 <div id="div_canvasCruzada"></div>
                 <br>
                 <div style="display: none" id="div_questions">
-                    <center>
+                   
                         <span id="span_questionText">Vamos encontrar as esferas do dragao</span>
                         <input type="text" id="input_answer" placeholder="Sua Reposta"><br>
                         <button id="button_verify" onclick="verify()" class="button">Verificar</button>
-                    </center>
+                    
     
     
                 </div>
             </div>
         </div>
         </div>
+    </div>  
     <br><br>
-</header>
+
     
 
     <script>
