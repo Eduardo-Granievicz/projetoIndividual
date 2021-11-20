@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="ptbr">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de login</title>
+    <title>Calculadora</title>
 </head>
 <style>
-    * {
+      * {
     margin: 0;
     padding: 0;
   }
   
   body{
       background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
-  }
+      background-repeat: no-repeat;
+    }
   
   a {
     color: #fff;
@@ -68,7 +69,9 @@
     margin-left: 32px;
   }
 
-  .banner{
+  .banner
+{
+    
     height: 100vh;
     background-size:cover;
     background-position: center;
@@ -90,19 +93,12 @@
 
 }
 
-   .banner img{
-    height: 100vh;
-    width: 99.1vw;
+.banner img{
+height: 100vh;
+width: 99.1vw;
 }
 
-.banner .formLogin .titulo{
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-    .banner .formLogin{
+.banner .calculadora{
     background: rgb(0, 0, 0, 0.9);
     height: 40%;
     width: 20%;
@@ -116,7 +112,7 @@
     color: white;
 }
 
-.banner .formLogin button{
+.banner .calculadora button{
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -131,14 +127,14 @@
     width: 200px; 
 }
 
-.banner .formLogin button:hover{
+.banner .calculadora button:hover{
     opacity: 0.8;
 }
 
-.banner .formLogin .input{
+.banner .calculadora .input{
     width: 10vw;
-    height: 3vh;
-    border-radius: 7px;
+    height: 2vh;
+    border-radius: 7rem;
     padding: 10px;
     border: none;
     outline: none;
@@ -146,7 +142,25 @@
    
 }
 
+.banner #valores{
+    background: rgb(0, 0, 0, 0.9);
+    height: 40%;
+    width: 20%;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    color: white;
+}
 
+
+
+.calculadora .banner{
+    margin: 100rem;
+}
 
 .footer
 {
@@ -158,16 +172,25 @@
     
 }
 
+#valores #titulo{
+    color: grey;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+
+#valores span{
+    color: yellow;
+}
+
 .footer p
 {
     color: #ffff;
     font-weight: 500;
 }
-
 </style>
 <body>
-    
-<header>
+    <header>
     <nav>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtJArb7in5fXN20rvRiEmhmWJofjN6DXE9du_rGNmcZ28bAw_nAqM9wWtQEPvJ2sQ5Tk&usqp=CAU" alt="">
             <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
@@ -180,45 +203,83 @@
                     
                 </ul>
     </nav>
-</header>
+
+    
+</header>    
 
 <main>
     <div class="banner">
-        <div class="formLogin">
-            <form action="">
-        <h3 class="titulo">Counter-Strike</h3>
-        <br><br>
-        <h3 class="titulo">Faça seu login</h3> <br>
-        <h3>Email:</h3> <input class="input" id="email" type="text" placeholder="Insira seu email" required> 
-        <br><br>
-        <h3>Senha:</h3>  <input class="input" id="senha" type="password" placeholder="Insira sua senha" required>
-        <br><br>
-        <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha <br>
-
-        <button type="submit">Entrar</button>
-            </form>
+        <div class="calculadora">
+            <h2>Calcule aqui</h2>
+            <h3>Insira o nome da skin:</h3> <input class="input" type="text" id="ipt_skin" placeholder="Insira o nome"> <br>
+            <h3>Insira o valor da skin:</h3> <input class="input" type="text" id="ipt_preco" placeholder="Insira o valor"><br><br>
+            <button onclick="calcular()">Calcular</button>
         </div>
-    </div>    
+    
+
+    <div id="valores" style="display: none;">
+        <h2 id="titulo">Valores a receber</h2><br>
+
+        <p>
+            <h2>Skin escolhida: <span id="skin_escolhida"></span> </h2>
+        </p>
+
+        <p>
+            <h2>Vendendo na Steam, recebera aproximadamente: <span>R$</span> <span id="preco_steam"></span></h2>
+        </p> <br>
+
+        <p>
+            <h2>Fazendo a converção para dolar, recebera aproximadamente: <span>$</span><span id="preco_convercao"></span></h2>
+        </p> <br>
+
+        <p>
+           <h2>Vendendo em sites de terceiros, recebera aproximadamente: <span> R$</span> <span id="preco_terceiros"></span></h2>
+        </p>
+
+    </div>
+</div>    
 </main>
 
 
-<footer class="footer">
-    <p>
-        Eduardo Granievicz © 2021
-    </p>
-</footer>
-
+    <footer class="footer">
+        <p>
+            Eduardo Granievicz © 2021
+        </p>
+    </footer>
     
 </body>
 </html>
-
 <script>
-     function mostrarSenha(){
-        var senha = document.getElementById("senha")
-        if (senha.type=="password"){
-            senha.type="text";
-        }else{
-            senha.type="password"
+     function calcular(){
+        if (ipt_skin.value == ''){
+            alert ('Insira o nome da skin')
+
+        }else if(ipt_preco.value == ''){
+            alert ('Insira um valor')
         }
+        else{
+            {
+                mostrar()
+            }
+        }
+    } 
+
+    function mostrar(){
+        var porcento = ipt_preco.value * 30 / 100
+        var porcent = ipt_preco.value * 20 / 100
+        var convercao = ipt_preco.value * 5.61
+        var steam = ipt_preco.value - porcento
+        var terceiros = ipt_preco.value - porcent
+        var skin = ipt_skin.value
+        
+        ipt_skin.value = ''
+        ipt_preco.value = ''
+        
+        skin_escolhida.innerHTML = `${skin}`
+        preco_steam.innerHTML = `${steam.toFixed(2)}`
+        preco_convercao.innerHTML = `${convercao.toFixed(2)}`
+        preco_terceiros.innerHTML = `${terceiros.toFixed(2)}`
+        
+        valores.style.display = 'block'
     }
 </script>
