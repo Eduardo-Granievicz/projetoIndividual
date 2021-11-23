@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela inicial</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela inicial</title>
 </head>
 
 <style>
-    * {
+  * {
     margin: 0;
     padding: 0;
+    font-family: Lucida ;
   }
 
   body {
     background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
     background-repeat: no-repeat;
+
   }
 
   a {
@@ -34,6 +37,13 @@
     letter-spacing: 4px;
   }
 
+  header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+  }
+
   nav {
     display: flex;
     justify-content: space-around;
@@ -44,16 +54,16 @@
   }
 
   nav img {
-    width: 75px;
-    height: 75px;
+    width: 4%;
+    height: 90%;
   }
 
   main {
     background: url("bg.jpg") no-repeat center center;
     background-size: cover;
     height: 96vh;
-    width: 99vw;
-    margin-right: 300px;
+    width: 99.1vw;
+
   }
 
   header .cs {
@@ -72,13 +82,21 @@
 
   .banner {
 
+
+    margin-top: 100px;
+    background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
+
     height: 100vh;
+    width: 99vw;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     display: flex;
+
     justify-content: center;
     align-items: center;
     justify-content: space-around;
+
   }
 
   .banner .message {
@@ -93,10 +111,77 @@
 
   }
 
-  main .banner img {
-    height: 100vh;
-    width: 99.1vw;
+  main {
+    background-color: grey;
+
   }
+
+
+
+
+
+  .contexto .titulo .mvv {
+    background-color: rgb(0, 0, 0, 0.9);
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    padding: 1%;
+    border-radius: 10px;
+    font-size: 16px;
+
+  }
+
+
+
+  .contexto .titulo .mvv #titu {
+    background-color: rgb(0, 0, 0, );
+    color: white;
+    margin-left: 45%;
+    margin-right: 45%;
+
+    padding: 0.1%;
+    border-radius: 10px;
+    font-size: 25px;
+  }
+
+  .contexto .titulo .mvvv {
+    background-color: rgb(0, 0, 0, 0.9);
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding: 1%;
+    margin-top: 3rem;
+    border-radius: 10px;
+    font-size: 16px;
+
+  }
+
+  .contexto .titulo .mvvv #titu {
+    background-color: rgb(0, 0, 0, );
+    color: white;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: auto;
+    padding: 0.1%;
+    border-radius: 10px;
+    font-size: 25px;
+
+  }
+
+  .contexto .titulo .mvvv img {
+    width: 31%;
+    height: 30%;
+    display: inline-block;
+    flex-direction: initial;
+    padding: 1%;
+  }
+
+
+
+
+
 
   .footer {
     background-color: rgb(0, 0, 0, 0.9);
@@ -111,39 +196,104 @@
     color: #ffff;
     font-weight: 500;
   }
-
 </style>
 
 
 <body>
-    <header>
-        <nav>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtJArb7in5fXN20rvRiEmhmWJofjN6DXE9du_rGNmcZ28bAw_nAqM9wWtQEPvJ2sQ5Tk&usqp=CAU"
-            alt="">
-          <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
-          <ul class="nav-list">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Cadastro</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
-        </nav>
-      </header>
+  <header>
+    <nav>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtJArb7in5fXN20rvRiEmhmWJofjN6DXE9du_rGNmcZ28bAw_nAqM9wWtQEPvJ2sQ5Tk&usqp=CAU"
+        alt="">
+      <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
+      <ul class="nav-list">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Cadastro</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <main>
-        <div class="banner">
-          
+  <div class="banner">
+
+  </div>
+
+  <main>
+
+    <div class="contexto">
+      <div class="titulo">
+        <div class="mvv">
+          <div>
+            <h1 id="titu">Contexto</h1> <br>
+            <p>
+              Counter-Strike: Global Offensive (CS:GO) é um jogo online desenvolvido pela Valve Corporation e pela
+              Hidden Path Entertainment, sendo uma sequência de Counter-Strike: Source. É o quarto título principal da
+              franquia. <br>
+
+              Foi lançado no dia 21 de agosto de 2012 para as plataformas Windows e Mac OS X no Steam, Xbox 360 (por
+              meio da Xbox Live Arcade), e uma versão exclusiva para os EUA para PlayStation 3 (por meio da PlayStation
+              Network). <br>
+
+              A versão de Linux foi lançada em setembro de 2014 (com suporte para o sistema Ubuntu a partir da versão
+              12.05). O jogo conta com conteúdo clássico de tiro, como versões retrabalhadas de mapas clássicos, bem
+              como novos mapas, <br>
+
+              personagens e modos de jogo.[2] O sistema multiplayer multi-plataformas foi planejado entre jogadores de
+              Windows, OS X, Linux e PSN, mas acabou excluindo o PSN por causa das diferenças na frequência de
+              atualização dos sistemas.[3][4] <br>
+
+              A versão da PSN oferece três formas de controles, que inclui DualShock 3, PlayStation Move e é fizero
+              experimenta. <br>
+
+              De acordo com o portal para o submundo, o Counter-Strike: Global Offensive foi o jogo mais vendido pelo
+              Steam no Brasil, no ano de 2015. Segundo a matéria, brasileiros compraram mais de 205 mil cópias do jogo
+              da Valve entre abril e dezembro de 2015. Em segundo lugar ficou Grand Theft Auto V com 190 mil unidades
+              vendidas.[5] <br>
+            </p>
+          </div>
+          <div>
+          </div>
         </div>
-      </main>
+        <div class="contexto">
+          <div class="titulo">
+            <div class="mvvv">
+              <div>
+                <h1 id="titu">Counter-Strike Brasileiro</h1>
+                <img src="https://sm.ign.com/ign_br/screenshot/default/cnbuflvwgaafrgl_ca9z.jpg" alt="">
+                <img src="https://arena.rtp.pt/wp-content/uploads/2019/05/eslone.jpg" alt="">
+                <img id="image" src="https://theclutch.com.br/wp-content/uploads/2020/02/sk-esl-one-trofeu.jpg" alt="">
+                <p>
+                  Em julho de 2015, a Luminosity Gaming, organização do Canadá, montou seu primeiro elenco de CS:GO com
+                  jogadores brasileiros
 
-      <footer class="footer">
-        <p>
-          Eduardo Granievicz © 2021
-        </p>
-      </footer>
+                  e uma gaming house nos Estados Unidos. Faziam parte Fallen e Fer, que vinham se destacando nos
+                  torneios internacionais desde o ano anterior
+                  pela Kabum e depois pela Keyd. Junto com eles entrou também Coldzera. Só em novembro é que Taco e Fnx
+                  integraram a equipe, ocupando os lugares de Steel e Boltz.
 
-      
+                  Foi esse quinteto (Fallen, Fer, Coldzera, Taco e Fnx) que colocou o Brasil no topo do mundo em 2016.
+                  Desde a formação do grupo até os três primeiros meses do ano,
+                  o time ficou entre os quatro primeiros de diversos campeonatos internacionais, mas faltava o título
+                  perante as maiores equipes do mundo. Isso foi acontecer justamente num Major
+                  – torneios com esse status são os mais importantes do CS:GO. Em abril, os brasileiros ganharam a MLG
+                  Columbus e foram o primeiro time de fora da Europa a vencer um Major.
 
-    
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Eduardo Granievicz © 2021
+    </p>
+  </footer>
+
+
+
+
 </body>
+
 </html>
