@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário</title>
+</head>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Lucida ;
+  }
+
+  body {
+    background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
+    background-repeat: no-repeat;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    opacity: 0.7;
+  }
+
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 9vh;
+  }
+
+  nav img {
+    width: 75px;
+    height: 75px;
+  }
+
+  
+
+  header .cs {
+    padding-right: 90px;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+
+  .banner {
+
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .banner .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5e5e5;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.9;
+
+  }
+
+  main .banner img {
+    height: 100vh;
+    width: 99.1vw;
+  }
+
+  .footer {
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .footer p {
+    color: #ffff;
+    font-weight: 500;
+  }
+
+  .banner .fundo {
+    
+    background: rgb(0, 0, 0, 0.9);
+    height: 40%;
+    width: 20%;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    color: white;
+
+  }
+
+  .banner .fundo button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #575757 ;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    height: 3rem;
+    width: 10rem; 
+    outline: none;
+    
+}
+
+.banner .fundo button:hover{
+    opacity: 0.8;
+}
+
+.banner .fundo .input{
+    width: 10vw;
+    height: 2vh;
+    border-radius: 7rem;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+   
+}
+
+.banner #div_msg{
+  background: rgb(0, 0, 0, 0.9);
+    height: 40%;
+    width: 20%;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    color: white;
+
+}
+
+
+
+
+ 
+
+</style>
+
+<body>
+
+    <header>
+        <nav>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtJArb7in5fXN20rvRiEmhmWJofjN6DXE9du_rGNmcZ28bAw_nAqM9wWtQEPvJ2sQ5Tk&usqp=CAU"
+            alt="">
+          <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
+          <ul class="nav-list">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Cadastro</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <main>
+      <div class="banner">
+        <div class="fundo">
+
+            <h2>Quais skins você tem?</h2>
+            <input class="input" id="ipt_skin" type="text" placeholder="Insira a skin">
+            <input class="input" id="ipt_preco" type="text" placeholder="Insira o valor">
+          <div class="botoes">
+            <button onclick="inserir()">Inserir</button>
+            <button onclick="mostrar()">Mostrar</button>
+          </div>
+
+          
+        </div>
+        <div id="div_msg" style="display: none;"></div>
+      </div>  
+    </main>
+
+      <footer class="footer">
+        <p>
+          Eduardo Granievicz © 2021
+        </p>
+      </footer>
+
+    
+</body>
+</html>
+<script>
+
+      var skins = [];
+      var precos = [];
+
+      function inserir() {
+          if (ipt_skin.value != 0 && ipt_preco.value != 0) {
+              skins.push(ipt_skin.value)
+              precos.push(ipt_preco.value)
+          }
+          else {
+              alert("Insira a skin e seu valor")
+          }
+
+          ipt_preco.value = '';
+          ipt_skin.value = '';
+      }
+
+
+      function mostrar() {
+        var maior_preco = 0;
+        var menor_preco = 0;
+        var soma_precos = 0;
+
+        div_msg.innerHTML = '';
+
+        div_msg.style.display = 'block'
+        
+        var index = 0;
+        while (index < skins.length) {
+            
+            div_msg.innerHTML += `Skin ${skins.indexOf(skins[index]) + 1}: ${skins[index]}<br>
+                                  Valor da skin: ${precos[index]}.<br><br>`
+            
+            if (precos[index] * 1 > maior_preco) {
+                maior_preco = precos[index] * 1
+            }
+            else if (precos[index] * 1 < maior_preco) {
+                if (precos[index] * 1 < menor_preco) {
+                    menor_preco = precos[index] * 1
+                }
+                else {
+                    menor_preco = precos[index] * 1
+                }
+            }    
+            soma_precos += Number(precos[index] * 1)
+            index++
+        }
+        div_msg.innerHTML += `Skin mais cara: ${maior_preco.toFixed(2)}<br>
+                              Skin mais barato: ${menor_preco}<br>
+                              Soma dos Preços: ${soma_precos}<br>
+                              Média dos Preços: ${(soma_precos / precos.length).toFixed(2)}` 
+  }                        
+
+</script>
