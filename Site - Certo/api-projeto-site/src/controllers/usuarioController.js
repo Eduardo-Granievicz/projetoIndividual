@@ -62,6 +62,7 @@ function entrar (req, res) {
 function cadastrar(req, res) {
     var nome = req.body.nome;
     var email = req.body.email;
+    var skin = req.body.skin;
     var senha = req.body.senha;
 
     if (nome == undefined) {
@@ -71,7 +72,7 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nome, email,skin, senha)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -89,9 +90,27 @@ function cadastrar(req, res) {
     }
 }
 
+function metrica(req, res) {
+    usuarioModel.metrica()
+    .then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,   
-    testar
+    testar,
+    metrica
 }

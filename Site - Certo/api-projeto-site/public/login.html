@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Página Inicial</title>
+    <title>Counter-Strike | Página de Login</title>
 
     <script src="./assets/js/funcoes.js"></script>
 
@@ -106,11 +106,13 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    /* margin-top: 10%; */
+    margin-bottom: 15%;
 }
 
     .banner .formLogin{
     background: rgb(0, 0, 0, 0.9);
-    height: 40%;
+    height: 50%;
     width: 20%;
     padding: 30px;
     border-radius: 20px;
@@ -123,32 +125,35 @@
 }
 
 .banner .formLogin button{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 20%;
+    margin-bottom: 10%;
     cursor: pointer;
     background-color: #575757 ;
     color: #fff;
     font-size: 20px;
     font-weight: bolder;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 20px;
-    height: 50px;
-    width: 200px; 
+    height: 56%;
+    width: 90%; 
 }
+
+
 
 .banner .formLogin button:hover{
     opacity: 0.8;
 }
 
 .banner .formLogin .input{
-    width: 10vw;
+    width: 90%;
     height: 3vh;
     border-radius: 7px;
     padding: 10px;
     border: none;
     outline: none;
     font-size: 15px;
+    
    
 }
 
@@ -191,10 +196,10 @@
     <header>
         <nav>
             <img src="logo.png" alt="">
-                <a class="logo" href="telaInicial.html"> <span class="cs">Counter - Strike</span></a>
+                <a class="logo" href="index.html"> <span class="cs">Counter - Strike</span></a>
                     <ul class="nav-list">
     
-                        <li><a href="telaInicial.html">Início</a></li>
+                        <li><a href="index.html">Início</a></li>
                         <li><a href="cadastroo.html">Cadastro</a></li>
                         <li><a href="login.html">Login</a></li>
                         
@@ -238,7 +243,9 @@
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h4>Feito com amor por um aluno BandTec &copy; 2021</h4>
+            <p>
+                 Eduardo Granievicz © 2021
+            </p>
         </div>
     </div>
 
@@ -306,7 +313,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "dashboard.html";
+                        window.location = "resultados.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

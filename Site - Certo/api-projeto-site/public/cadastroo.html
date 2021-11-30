@@ -10,6 +10,13 @@
 
     
     <script src="./assets/js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     
     
     
@@ -23,6 +30,7 @@
   
   body{
       background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
+      
   }
   
   a {
@@ -48,6 +56,8 @@
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     background-color: rgb(0, 0, 0, 0.9);
     height: 9vh;
+    width: 99.1vw;
+    
   }
 
   nav img{
@@ -55,13 +65,6 @@
     height: 90%;
   }
 
-  main {
-    background: url("bg.jpg") no-repeat center center;
-    background-size: cover;
-    height: 96vh;
-    width: 99vw;
-    margin-right: 300px;
-  }
   
   header  .cs{
       padding-right: 90px;
@@ -77,8 +80,10 @@
     margin-left: 32px;
   }
 
-  .banner
-{
+  .banner{
+  
+    width: 99.1vw;
+  
     
     height: 100vh;
     background-size:cover;
@@ -110,11 +115,12 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    
 }
 
     .banner .formCadastro{
     background: rgb(0, 0, 0, 0.9);
-    height: 60vh;
+    height: 75vh;
     width: 20vw;
     padding: 30px;
     border-radius: 20px;
@@ -132,13 +138,16 @@
     cursor: pointer;
     background-color: #575757 ;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bolder;
     border: none;
-    padding: 10px 20px;
+    /* padding: 10%; */
     border-radius: 20px;
-    height: 5vh;
-    width: 10vw; 
+    height: 11%;
+    width: 80%;
+    /* padding-bottom: 2rem;  */
+    margin-left: 10%;
+    
     
 }
 
@@ -147,8 +156,8 @@
 }
 
 .banner .formCadastro .input{
-    width: 11vw;
-    height: 2vh;
+    width: 90%;
+    height: 5%;
     border-radius: 7px;
     padding: 10px;
     border: none;
@@ -166,6 +175,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 99.1vw;
+   
     
 }
 
@@ -195,10 +206,10 @@
     <header>
         <nav>
             <img src="logo.png" alt="">
-                <a class="logo" href="telaInicial.html"> <span class="cs">Counter - Strike</span></a>
+                <a class="logo" href="index.html"> <span class="cs">Counter - Strike</span></a>
                     <ul class="nav-list">
     
-                        <li><a href="telaInicial.html">Início</a></li>
+                        <li><a href="index.html">Início</a></li>
                         <li><a href="cadastroo.html">Cadastro</a></li>
                         <li><a href="login.html">Login</a></li>
                         
@@ -224,6 +235,9 @@
                         <br><br>
                         <h3>E-mail:</h3>
                         <input class="input" name="email" type="text" placeholder="Insira seu email">
+                        <br><br>
+                        <h3>Insira sua skin favorita:</h3>
+                        <input class="input" name="skin" placeholder="Insira sua skin favorita" type="text">
                         <br><br>
                         <h3>Senha:</h3>
                         <input class="input" name="senha" type="password" placeholder="Insira sua senha">
@@ -272,6 +286,8 @@
 
         var nome = formulario.get("nome");
         var email = formulario.get("email");
+        var skin = formulario.get("skin");
+    
         var senha = formulario.get("senha");
         var confirmacaoSenha = formulario.get("confirmacao-senha");
 

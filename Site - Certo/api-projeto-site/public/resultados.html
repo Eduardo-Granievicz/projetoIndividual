@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metricas</title>
+</head>
+<style>
+      * {
+    margin: 0;
+    padding: 0;
+    font-family: Lucida ;
+  }
+  
+  body{
+      background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
+      background-repeat: no-repeat;
+    }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 9vh;
+  }
+
+  nav img{
+    width: 4%;
+    height: 90%;
+  }
+
+  main {
+    
+    background-size: cover;
+    height: 96vh;
+    width: 99vw;
+    margin-right: 300px;
+  }
+  
+  header  .cs{
+      padding-right: 90px;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+
+  .banner
+{
+    
+    height: 100vh;
+    background-size:cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+  .banner .message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5e5e5;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.9;
+
+}
+
+   .banner img{
+    height: 100vh;
+    width: 99.1vw;
+}
+
+
+
+.footer{
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer p
+{
+    color: #ffff;
+    font-weight: 500;
+}
+</style>
+<body>
+    <header>
+    <nav>
+        <img src="logo.png" alt="">
+            <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
+                <ul class="nav-list">
+
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Cadastro</a></li>
+                    <li><a href="#">Login</a></li>
+                    
+                    
+                </ul>
+    </nav>
+    </header>  
+    
+    <main>
+
+        <button onclick="mostrar()">Mostrar resultado</button>
+            <div style="color: black;" id="msg"></div>
+    </main>
+
+
+    <footer class="footer">
+        <p>
+            Eduardo Granievicz © 2021
+        </p>
+    </footer>
+    
+</body>
+</html>
+
+<script>
+   function mostrar(){
+
+fetch("/usuarios/metrica", {
+    headers: {
+        'content-type': 'application/json'
+    },
+        method: "GET",
+       
+    })
+    .then(function (resposta) {
+resposta.json()
+
+.then(function (res) {
+msg.innerHTML = res[0].metrica
+
+})
+
+    .catch(function (erro) {
+        console.log(erro);
+     
+    });
+
+})
+
+.catch(function (erro) {
+        console.log(erro);
+})
+
+ 
+
+
+
+}
+    
+</script>

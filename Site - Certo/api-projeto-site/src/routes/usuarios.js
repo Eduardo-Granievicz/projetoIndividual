@@ -18,5 +18,9 @@ router.post("/cadastrar", function(req, res) {
 router.post("/autenticar", function(req, res) {
     usuarioController.entrar(req, res);
 });
+
+router.get("/metrica", function(req, res) {
+    usuarioController.metrica(req, res);
+});
   
 module.exports = router;
