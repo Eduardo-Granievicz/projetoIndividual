@@ -16,7 +16,7 @@
   }
 
   body {
-    background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
+    background-image: url(fundo.png);
     background-repeat: no-repeat;
   }
 
@@ -180,6 +180,7 @@
 
 <body>
 
+  
     <header>
         <nav>
           <img
@@ -233,7 +234,7 @@ function inserir(){
             div_msg.innerHTML = ''
             skin.push(ipt_skin.value)
             for (let index = 0; index < skin.length; index++){
-                div_msg.innerHTML += (`A ${skins}° skin é:${skin[skin.length -1]}<br>`)
+                div_msg.innerHTML += (`A ${skins}° skin é: <b style="color: white;" >${skin[skin.length -1]}</b><br>`)
                 skins++
                 div_msg.style.display = 'block'
             }
