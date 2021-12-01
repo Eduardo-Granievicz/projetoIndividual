@@ -117,7 +117,7 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
     
     color: white;
@@ -133,10 +133,10 @@
     font-size: 20px;
     font-weight: bolder;
     border: none;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     border-radius: 20px;
-    height: 3rem;
-    width: 10rem; 
+    height: 20%;
+    width: 70%; 
     outline: none;
     
 }
@@ -148,7 +148,7 @@
 .banner .fundo .input{
     width: 10vw;
     height: 2vh;
-    border-radius: 7rem;
+    border-radius: 5px;
     padding: 10px;
     border: none;
     outline: none;
@@ -200,11 +200,11 @@
 
             <h2>Quais skins você tem?</h2>
             <input class="input" id="ipt_skin" type="text" placeholder="Insira a skin">
-            <input class="input" id="ipt_preco" type="text" placeholder="Insira o valor">
-          <div class="botoes">
+            
+          
             <button onclick="inserir()">Inserir</button>
-            <button onclick="mostrar()">Mostrar</button>
-          </div>
+            
+          
 
           
         </div>
@@ -222,57 +222,24 @@
 </body>
 </html>
 <script>
-
-      var skins = [];
-      var precos = [];
-
-      function inserir() {
-          if (ipt_skin.value != 0 && ipt_preco.value != 0) {
-              skins.push(ipt_skin.value)
-              precos.push(ipt_preco.value)
-          }
-          else {
-              alert("Insira a skin e seu valor")
-          }
-
-          ipt_preco.value = '';
-          ipt_skin.value = '';
-      }
-
-
-      function mostrar() {
-        var maior_preco = 0;
-        var menor_preco = 0;
-        var soma_precos = 0;
-
-        div_msg.innerHTML = '';
-
-        div_msg.style.display = 'block'
-        
-        var index = 0;
-        while (index < skins.length) {
+        var skin = []
+function inserir(){
+        var skins = 1
+        if (ipt_skin.value = ''){
+            alert ('Insira o nome da skin')
             
-            div_msg.innerHTML += `Skin ${skins.indexOf(skins[index]) + 1}: ${skins[index]}<br>
-                                  Valor da skin: ${precos[index]}.<br><br>`
-            
-            if (precos[index] * 1 > maior_preco) {
-                maior_preco = precos[index] * 1
-            }
-            else if (precos[index] * 1 < maior_preco) {
-                if (precos[index] * 1 < menor_preco) {
-                    menor_preco = precos[index] * 1
-                }
-                else {
-                    menor_preco = precos[index] * 1
-                }
-            }    
-            soma_precos += Number(precos[index] * 1)
-            index++
         }
-        div_msg.innerHTML += `Skin mais cara: ${maior_preco.toFixed(2)}<br>
-                              Skin mais barato: ${menor_preco}<br>
-                              Soma dos Preços: ${soma_precos}<br>
-                              Média dos Preços: ${(soma_precos / precos.length).toFixed(2)}` 
-  }                        
+        else{
+            div_msg.innerHTML = ''
+            skin.push(ipt_skin.value)
+            for (let index = 0; index < skin.length; index++){
+                div_msg.innerHTML += (`A ${skins}° skin é:${skin[skin.length -1]}<br>`)
+                skins++
+                div_msg.style.display = 'block'
+            }
+        }
+        
+    }
+
 
 </script>

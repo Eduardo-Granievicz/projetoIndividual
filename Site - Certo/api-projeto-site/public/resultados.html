@@ -94,6 +94,42 @@
 
 }
 
+.banner .meio{
+  background-color: rgb(0, 0, 0, 0.9);
+  width: 30vw;
+  height: 50vh;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.banner .meio button{
+    margin-top: 60%;
+    
+    cursor: pointer;
+    background-color: #575757 ;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    
+    border-radius: 20px;
+    height: 15%;
+    width: 50%; 
+}
+
+.banner .meio button:hover{
+    opacity: 0.8;
+}
+
+.banner .meio #msg{
+  font-size: 30px;
+}
+
+
    .banner img{
     height: 100vh;
     width: 99.1vw;
@@ -123,9 +159,10 @@
             <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
                 <ul class="nav-list">
 
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Cadastro</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Calculadora</a></li>
+                    <li><a href="#">Faça seu Inventário</a></li>
+                    <li><a href="#">Sorteio de mapas</a></li>
+                    <li><a href="#">Métricas</a></li>
                     
                     
                 </ul>
@@ -133,9 +170,13 @@
     </header>  
     
     <main>
-
-        <button onclick="mostrar()">Mostrar resultado</button>
-            <div style="color: black;" id="msg"></div>
+      <div class="banner">
+        <div class="meio">
+          <h2>Usuarios cadastrados</h2>
+            <button onclick="mostrar()">Mostrar resultado</button>
+          <div id="msg"></div>
+        </div>  
+      </div> 
     </main>
 
 
@@ -159,10 +200,10 @@ fetch("/usuarios/metrica", {
        
     })
     .then(function (resposta) {
-resposta.json()
+    resposta.json()
 
-.then(function (res) {
-msg.innerHTML = res[0].metrica
+    .then(function (res) {
+    msg.innerHTML = res[0].metrica
 
 })
 

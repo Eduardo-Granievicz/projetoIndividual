@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Mapas</title>
 </head>
 <style>
       * {
@@ -99,6 +99,74 @@
     width: 99.1vw;
 }
 
+.banner .conteudo{
+    background: rgb(0, 0, 0, 0.9);
+    height: 50%;
+    width: 20%;
+    padding: 2%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    color: white;
+}
+
+.banner .conteudo button{
+    /* margin-top: 50%; */
+    margin-bottom: 70%;
+    cursor: pointer;
+    background-color: #575757 ;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    /* padding: 15px 20px; */
+    border-radius: 20px;
+    height: 12%;
+    width: 90%; 
+    margin-left: 5%;
+}
+
+
+
+.banner .conteudo button:hover{
+    opacity: 0.8;
+}
+
+.banner .conteudo .input{
+    width: 90%;
+    height: 3vh;
+    border-radius: 7px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    
+   
+}
+
+.banner #msg{
+    background: rgb(0, 0, 0, 0.9);
+    height: 40%;
+    width: 25%;
+    padding: 4%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 4%;
+    
+    color: white;
+}
+
+.banner #msg img{
+  padding-bottom: 5%;
+}
+
+
 
 
 .footer{
@@ -123,8 +191,8 @@
             <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
                 <ul class="nav-list">
 
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Cadastro</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="maps.html">Sorteio de mapas</a></li>
                     <li><a href="#">Login</a></li>
                     
                     
@@ -133,7 +201,15 @@
     </header>  
     
     <main>
-      
+      <div class="banner">
+        <div class="conteudo">
+          <h2>Sorteio de Mapas</h2>
+          
+          <button onclick="sorteio()">Sorteio</button>
+          
+        </div>
+        <div id="msg" style="display: none;"></div>
+      </div>
     </main>
 
 
@@ -145,3 +221,55 @@
     
 </body>
 </html>
+<script>
+  function sorteio(){
+    var cobble = '<img style="width: 350px; height: 250px;" src="https://jackgoodall.files.wordpress.com/2015/03/2015-03-25_00002.jpg" alt="">'
+    var dust = '<img style="width: 350px; height: 250px;" src="https://cdn.wallpapersafari.com/23/10/3Dts5S.jpg" alt="">'
+    var inferno = '<img style="width: 350px; height: 250px;" src="https://www.elecspo.com/static/uploads/13/2019/03/inferno2.jpg" alt="">'
+    var nuke = '<img style="width: 350px; height: 250px;" src="https://cdn1.dotesports.com/wp-content/uploads/2019/12/06122255/csgo-nuke-catwalk.jpg" alt="">'
+    var train = '<img style="width: 350px; height: 250px;" src="https://static.wikia.nocookie.net/cswikia/images/4/4b/De_shorttrain_thumbnail.jpg/revision/latest?cb=20170610041538" alt="">'
+    var cache = '<img style="width: 350px; height: 250px;" src="https://cdn1.dotesports.com/wp-content/uploads/2018/08/11142753/500eb3ac-2579-44ad-bdcf-b1056b978df2.jpg" alt="">'
+    var overpass = '<img style="width: 350px; height: 250px;" src="https://blog.counter-strike.net/wp-content/uploads//2013/12/opass3.jpg" alt="">'
+    var mirage = '<img style="width: 350px; height: 250px;" src="https://clubedovideogame.com.br/wp-content/uploads/2021/04/Mirage-1024x640.png" alt="">'
+    var aleatorio = Math.ceil(Math.random() * 7)
+        
+        if (aleatorio == 0){
+          msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Overpass</h3></span> <br>
+                            ${overpass}  `
+        }
+        else if(aleatorio == 1){
+            msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Mirage</h3></span> <br>
+                             ${mirage}   `
+        msg.style.display = 'block'
+        }
+        else if (aleatorio == 2){
+          msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Dust 2</h3></span> <br>
+                            ${dust}  ` 
+        }
+        else if (aleatorio == 3){
+          msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Cobblestone</h3></span> <br>
+                            ${cobble}  `
+        }
+        else if (aleatorio == 4){
+          msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Inferno</h3></span> <br>
+                            ${inferno}  `
+        }
+        else if (aleatorio == 5){
+          msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Nuke</h3></span> <br>
+                            ${nuke}  `
+        }
+        else if (aleatorio == 6){
+          msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Train</h3></span> <br>
+                            ${train}  `
+        }
+        else if (aleatorio == 7){
+          msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Cache<h3></span> <br>
+                            ${cache}  `
+        }
+        
+        
+    }
+</script>
+
+
+
