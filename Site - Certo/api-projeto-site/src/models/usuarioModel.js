@@ -12,7 +12,7 @@ function listar() {
 function metrica() {
     
     var instrucao = `
-            select count(id) as metrica from usuario;
+            select count(idUsuario) as metrica from usuario;
     `;
     console.log("Executando a instrução SQL: \n"+instrucao);
     return database.executar(instrucao);

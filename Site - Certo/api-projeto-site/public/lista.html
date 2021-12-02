@@ -188,9 +188,10 @@
             alt="">
           <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
           <ul class="nav-list">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Cadastro</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="lista.html">Faça seu Inventário</a></li>
+            <li><a href="maps.html">Sorteio de mapas</a></li>
+            <li><a href="resultados.html">Métricas</a></li>
           </ul>
         </nav>
       </header>
@@ -210,6 +211,7 @@
           
         </div>
         <div id="div_msg" style="display: none;"></div>
+        
       </div>  
     </main>
 
@@ -224,23 +226,16 @@
 </html>
 <script>
         var skin = []
-function inserir(){
-        var skins = 1
-        if (ipt_skin.value = ''){
-            alert ('Insira o nome da skin')
-            
+        function inserir(){
+          skin.push(ipt_skin.value);
+          
+          for (let index = 1; index < skin.length; index++) {
+            div_msg.innerHTML += `A ${index}° skin é: <b>${skin[index]}</b><br>`
+            div_msg.style.display = 'block'
+          }
         }
-        else{
-            div_msg.innerHTML = ''
-            skin.push(ipt_skin.value)
-            for (let index = 0; index < skin.length; index++){
-                div_msg.innerHTML += (`A ${skins}° skin é: <b style="color: white;" >${skin[skin.length -1]}</b><br>`)
-                skins++
-                div_msg.style.display = 'block'
-            }
-        }
-        
-    }
 
 
 </script>
+
+

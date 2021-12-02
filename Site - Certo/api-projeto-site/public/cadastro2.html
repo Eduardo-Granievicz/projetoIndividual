@@ -120,7 +120,7 @@
 
     .banner .formCadastro{
     background: rgb(0, 0, 0, 0.9);
-    height: 70vh;
+    height: 50vh;
     /* width: 20vw; */
     padding: 30px;
     border-radius: 20px;
@@ -143,7 +143,7 @@
     border: none;
     /* padding: 10%; */
     border-radius: 20px;
-    height: 7%;
+    height: 15%;
     width: 80%;
     /* padding-bottom: 2rem;  */
     margin-left: 10%;
@@ -157,7 +157,7 @@
 
 .banner .formCadastro .input{
     width: 90%;
-    height: 3%;
+    height: 8%;
     border-radius: 7px;
     padding: 10px;
     border: none;
@@ -175,7 +175,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    width: 99.1vw;
    
     
 }
@@ -228,23 +228,11 @@
                     <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                         <br><br>
 
-                        <h3 class="titulo">Faça seu Cadastro!</h3> <br>
+                        <h3 class="titulo">Complete seu cadastro!</h3> <br>
 
-                        <h3>Nome:</h3>
-                        <input class="input" name="nome" type="text" placeholder="Insira seu nome">
+                        <h3>Insira sua patente:</h3>
+                        <input class="input" name="patente" type="text" placeholder="Insira sua patente">
                         <br><br>
-                        <h3>E-mail:</h3>
-                        <input class="input" name="email" type="text" placeholder="Insira seu email">
-                        <br><br>
-                        <h3>Insira sua skin favorita:</h3>
-                        <input class="input" name="skin" placeholder="Insira sua skin favorita" type="text">
-                        <br><br>
-                        <h3>Senha:</h3>
-                        <input class="input" name="senha" type="password" placeholder="Insira sua senha">
-                        <br><br>
-                        <h3>Confirmação da Senha:</h3>
-                        <input class="input" name="confirmacao-senha" type="password" placeholder="Insira sua senha">
-                        <br>
                         <button class="btn">Cadastrar</button>
                     </form>
                 
@@ -280,15 +268,14 @@
     }
 
     function cadastrar() {
+        console.log('1223131212')
         aguardar();
-
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
-
-        var nome = formulario.get("nome");
-        var email = formulario.get("email");
-        var skin = formulario.get("skin");
-        var senha = formulario.get("senha");
-        var confirmacaoSenha = formulario.get("confirmacao-senha");
+        
+        
+        var patente = formulario.get("patente");
+        
+        console.log('idjwaijdwaijdawdawad')
 
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
         if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
@@ -322,7 +309,7 @@
             return false;
         }
 
-        fetch("/usuarios/cadastrar", {
+        fetch("/patente/patente", {
             method: "POST",
             body: formulario
         }).then(function (resposta) {
@@ -331,7 +318,7 @@
 
             if (resposta.ok) {
                 window.alert("Cadastro realizado com sucesso!");
-                window.location = "login.html";
+                window.location = "maps.html";
                 limparFormulario();
                 finalizarAguardar();
             } else {

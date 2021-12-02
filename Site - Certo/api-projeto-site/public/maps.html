@@ -14,7 +14,7 @@
   }
   
   body{
-      background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1080/1803/Counter-Strike-Global-Offensive-CS-game_1920x1080.jpg);
+      background-image: url(fundo.png);
       background-repeat: no-repeat;
     }
   
@@ -191,9 +191,10 @@
             <a class="logo" href=""> <span class="cs">Counter - Strike</span></a>
                 <ul class="nav-list">
 
-                    <li><a href="calculadora.html">Calculadora</a></li>
-                    <li><a href="maps.html">Sorteio de mapas</a></li>
-                    <li><a href="#">Login</a></li>
+                  <li><a href="calculadora.html">Calculadora</a></li>
+                  <li><a href="lista.html">Faça seu Inventário</a></li>
+                  <li><a href="maps.html">Sorteio de mapas</a></li>
+                  <li><a href="resultados.html">Métricas</a></li>
                     
                     
                 </ul>
@@ -223,16 +224,17 @@
 </html>
 <script>
   function sorteio(){
-    var cobble = '<img style="width: 350px; height: 250px;" src="https://jackgoodall.files.wordpress.com/2015/03/2015-03-25_00002.jpg" alt="">'
-    var dust = '<img style="width: 350px; height: 250px;" src="https://cdn.wallpapersafari.com/23/10/3Dts5S.jpg" alt="">'
-    var inferno = '<img style="width: 350px; height: 250px;" src="https://www.elecspo.com/static/uploads/13/2019/03/inferno2.jpg" alt="">'
-    var nuke = '<img style="width: 350px; height: 250px;" src="https://cdn1.dotesports.com/wp-content/uploads/2019/12/06122255/csgo-nuke-catwalk.jpg" alt="">'
-    var train = '<img style="width: 350px; height: 250px;" src="https://static.wikia.nocookie.net/cswikia/images/4/4b/De_shorttrain_thumbnail.jpg/revision/latest?cb=20170610041538" alt="">'
-    var cache = '<img style="width: 350px; height: 250px;" src="https://cdn1.dotesports.com/wp-content/uploads/2018/08/11142753/500eb3ac-2579-44ad-bdcf-b1056b978df2.jpg" alt="">'
-    var overpass = '<img style="width: 350px; height: 250px;" src="https://blog.counter-strike.net/wp-content/uploads//2013/12/opass3.jpg" alt="">'
-    var mirage = '<img style="width: 350px; height: 250px;" src="https://clubedovideogame.com.br/wp-content/uploads/2021/04/Mirage-1024x640.png" alt="">'
+    var cobble = '<img style="width: 350px; height: 250px;" src="cobble.jpg" alt="">'
+    var dust = '<img style="width: 350px; height: 250px;" src="dust.jpg" alt="">'
+    var inferno = '<img style="width: 350px; height: 250px;" src="inferno.jpg" alt="">'
+    var nuke = '<img style="width: 350px; height: 250px;" src="nuke.jpg" alt="">'
+    var train = '<img style="width: 350px; height: 250px;" src="train.jpg" alt="">'
+    var cache = '<img style="width: 350px; height: 250px;" src="cache.jpg" alt="">'
+    var overpass = '<img style="width: 350px; height: 250px;" src="overpass.jpg" alt="">'
+    var mirage = '<img style="width: 350px; height: 250px;" src="mirage.jpg" alt="">'
     var aleatorio = Math.ceil(Math.random() * 7)
         
+    msg.style.display = 'block'
         if (aleatorio == 0){
           msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Overpass</h3></span> <br>
                             ${overpass}  `
@@ -240,7 +242,6 @@
         else if(aleatorio == 1){
             msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Mirage</h3></span> <br>
                              ${mirage}   `
-        msg.style.display = 'block'
         }
         else if (aleatorio == 2){
           msg.innerHTML = `<span style="align-items: center; font-weight: bolder; color: white;"><h3>Mapa: Dust 2</h3></span> <br>
@@ -270,6 +271,8 @@
         
     }
 </script>
+
+
 
 
 
